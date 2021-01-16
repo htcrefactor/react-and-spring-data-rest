@@ -1,6 +1,14 @@
-@Entity (1)
+package com.htcrefactor.payroll;
+
+import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+
+@Entity
 public class Employee {
-    private @Id @GeneratedValue Log id; (2)
+    private @Id @GeneratedValue Long id;
     private String firstName;
     private String lastName;
     private String description;
@@ -15,11 +23,11 @@ public class Employee {
 
     @Override
     public boolean equals(Object o) {
-        it (this == o) return true;
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         
-        return Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(description, empolyee.description);
+        return Objects.equals(id, employee.id) && Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(description, employee.description);
     }
 
     @Override
